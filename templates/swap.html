@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Đổi BRIL</title>
+</head>
+<body>
+  <h1>Đổi BRIL ➝ POL ➝ VND</h1>
+  <form>
+    <label for="bril">Nhập số BRIL:</label>
+    <input type="number" id="bril" name="bril">
+    <button type="button" onclick="calc()">Tính</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    async function calc() {
+      const bril = document.getElementById("bril").value;
+      const polPerBril = 0.1259;
+      const vndPerPol = 4800;
+      const pol = bril * polPerBril * 0.93;
+      const vnd = pol * vndPerPol;
+      document.getElementById("result").innerText = 
+        `Bạn nhận được ${pol.toFixed(4)} POL (~${Math.round(vnd).toLocaleString()} VND)`;
+    }
+  </script>
+</body>
+</html>
